@@ -1,0 +1,76 @@
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 1280px;
+    margin: 0 auto;
+    padding: 10px 20px;
+
+    background-color: rgba(255, 255, 255, 0.418);
+    border-radius: 0 0 15px 15px;
+
+}
+
+.logo__img {
+
+    width: 50px;
+
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.navegacion ul {
+
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+
+    list-style: none;
+
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+.navegacion ul li a {
+
+    text-decoration: none;
+    color: white;
+
+    font-size: 18px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.navegacion ul li a:hover {
+
+    color: rgb(0, 195, 255);
+
+}
+
+.whatsapp {
+
+    color: greenyellow;
+
+}
+
+.whatsapp:hover{
+
+    color: white;
+
+}
+
+
+
+
+.firefox .navbar {
+    backdrop-filter: none;
+    background-color: var(--bg);
+}
