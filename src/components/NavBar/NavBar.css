@@ -54,23 +54,3 @@
     color: rgb(0, 195, 255);
 
 }
-
-.whatsapp {
-
-    color: greenyellow;
-
-}
-
-.whatsapp:hover{
-
-    color: white;
-
-}
-
-
-
-
-.firefox .navbar {
-    backdrop-filter: none;
-    background-color: var(--bg);
-}
