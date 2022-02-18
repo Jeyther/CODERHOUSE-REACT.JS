@@ -6,8 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 
 function App() {
-  return (
-    <div className="App">
+  return  <div className="App">
       <header className="App-header">
 
         <div>
@@ -16,11 +15,11 @@ function App() {
 
         </div>
 
-        <ItemListContainer tittle = 'Titulo Provisional'/>
+        <ItemListContainer tittle = 'PetShop'/>
         
       </header>
     </div>
-  );
+  ;
 }
 
 export default App;
