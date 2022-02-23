@@ -7,16 +7,16 @@ const NavBar = () => {
 
     return (
 
-        <nav class="navbar">
+        <nav className="navbar">
 
-            <a class="logo" href="index.html">
-                <img class="logo__img" src={logo} alt="PetCity_logo" />
+            <a className="logo" href="index.html">
+                <img className="logo__img" src={logo} alt="PetCity_logo" />
             </a>
 
-            <div class="navegacion">
+            <div className="navegacion">
                 <ul>
                     <li>
-                        <a class="activo" aria-current="page" href="index.html">Inicio</a>
+                        <a className="activo" aria-current="page" href="index.html">Inicio</a>
                     </li>
                     <li>
                         <a href="#S2">Servicios</a>
