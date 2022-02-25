@@ -64,7 +64,7 @@ const ItemList = (props) => {
 
                         <div className="elemento">
                             
-                            <a href='index.html'>
+                            <a href={"/itemList/"+articulo.id}>
 
                                 <img className="elemento__img" src={articulo.img} alt={articulo.img} />
 

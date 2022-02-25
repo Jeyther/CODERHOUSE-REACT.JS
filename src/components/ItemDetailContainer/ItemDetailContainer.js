@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from 'react-router-dom';
 
 import articulos from './../../articulos.json'
 
 
 const ItemDetailContainer = (props) => {
+
+    const { itemID } = useParams();
 
     const [item, setItem] = useState([]);
 
@@ -12,7 +15,7 @@ const ItemDetailContainer = (props) => {
 
         getItem();
 
-    }, []);
+    });
 
     const getItem = () => {
 
@@ -27,7 +30,8 @@ const ItemDetailContainer = (props) => {
         promesa.then(resultado => {
 
             // console.log(resultado[5]);
-            setItem(resultado[5]);
+            setItem(resultado[itemID]);
+            console.log(itemID);
 
         })
 
