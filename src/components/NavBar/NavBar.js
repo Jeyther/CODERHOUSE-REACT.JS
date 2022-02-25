@@ -19,19 +19,19 @@ const NavBar = () => {
                         <a className="activo" aria-current="page" href="/">Inicio</a>
                     </li>
                     <li>
-                        <a href="#S2">Servicios</a>
+                        <a href="/">Servicios</a>
                     </li>
                     <li>
                         <a href="/itemList">PetShop</a>
                     </li>
                     <li>
-                        <a href="/itemList/5">Ventajas</a>
+                        <a href="/">Ventajas</a>
                     </li>
                     <li>
-                        <a href="#S5">Nosotros</a>
+                        <a href="/">Nosotros</a>
                     </li>
                     <li>
-                        <a href="#S7">Contacto</a>
+                        <a href="/">Contacto</a>
                     </li>
                 </ul>
             </div>

@@ -80,7 +80,7 @@
     },
     {
         "id": 8,
-        "nombre": "Comida Gato 9",
+        "nombre": "Comida Gato 1",
         "descripcion": "esta es la comida de gato numero 1",
         "tipo": "gato",
         "cantidad": 1,
@@ -88,7 +88,7 @@
         "img": "../img/articulos/gato/comida_gato-1.jpg"
     },
     {
-        "nombre": "Comida Gato 10",
+        "nombre": "Comida Gato 2",
         "id": 9,
         "descripcion": "esta es la comida de gato numero 2",
         "tipo": "gato",
@@ -99,7 +99,7 @@
     },
     {
         "id": 10,
-        "nombre": "Comida Gato 11",
+        "nombre": "Comida Gato 3",
         "descripcion": "esta es la comida de gato numero 3",
         "tipo": "gato",
         "cantidad": 1,
@@ -109,7 +109,7 @@
     },
     {
         "id": 11,
-        "nombre": "Comida Gato 12",
+        "nombre": "Comida Gato 4",
         "descripcion": "esta es la comida de gato numero 4",
         "tipo": "gato",
         "cantidad": 1,
@@ -119,7 +119,7 @@
     },
     {
         "id": 12,
-        "nombre": "Comida Gato 13",
+        "nombre": "Comida Gato 5",
         "descripcion": "esta es la comida de gato numero 5",
         "tipo": "gato",
         "cantidad": 1,
@@ -129,7 +129,7 @@
     },
     {
         "id": 13,
-        "nombre": "Comida Gato 14",
+        "nombre": "Comida Gato 6",
         "descripcion": "esta es la comida de gato numero 6",
         "tipo": "gato",
         "cantidad": 1,
@@ -139,7 +139,7 @@
     },
     {
         "id": 14,
-        "nombre": "Comida Gato 15",
+        "nombre": "Comida Gato 7",
         "descripcion": "esta es la comida de gato numero 7",
         "tipo": "gato",
         "cantidad": 1,
@@ -149,7 +149,7 @@
     },
     {
         "id": 15,
-        "nombre": "Comida Gato 16",
+        "nombre": "Comida Gato 8",
         "descripcion": "esta es la comida de gato numero 8",
         "tipo": "gato",
         "cantidad": 1,
@@ -159,7 +159,7 @@
     },
     {
         "id": 16,
-        "nombre": "Comida Ave 17",
+        "nombre": "Comida Ave 1",
         "descripcion": "esta es la comida de ave numero 1",
         "tipo": "ave",
         "cantidad": 1,
@@ -167,7 +167,7 @@
         "img": "../img/articulos/ave/comida_ave-1.jpg"
     },
     {
-        "nombre": "Comida Ave 18",
+        "nombre": "Comida Ave 2",
         "id": 17,
         "descripcion": "esta es la comida de ave numero 2",
         "tipo": "ave",
@@ -178,7 +178,7 @@
     },
     {
         "id": 18,
-        "nombre": "Comida Ave 19",
+        "nombre": "Comida Ave 3",
         "descripcion": "esta es la comida de ave numero 3",
         "tipo": "ave",
         "cantidad": 1,
@@ -188,7 +188,7 @@
     },
     {
         "id": 19,
-        "nombre": "Comida Ave 20",
+        "nombre": "Comida Ave 4",
         "descripcion": "esta es la comida de ave numero 4",
         "tipo": "ave",
         "cantidad": 1,
@@ -198,7 +198,7 @@
     },
     {
         "id": 20,
-        "nombre": "Comida Ave 21",
+        "nombre": "Comida Ave 5",
         "descripcion": "esta es la comida de ave numero 5",
         "tipo": "ave",
         "cantidad": 1,
@@ -208,7 +208,7 @@
     },
     {
         "id": 21,
-        "nombre": "Comida Ave 22",
+        "nombre": "Comida Ave 6",
         "descripcion": "esta es la comida de ave numero 6",
         "tipo": "ave",
         "cantidad": 1,
@@ -218,7 +218,7 @@
     },
     {
         "id": 22,
-        "nombre": "Comida Ave 23",
+        "nombre": "Comida Ave 7",
         "descripcion": "esta es la comida de ave numero 7",
         "tipo": "ave",
         "cantidad": 1,
@@ -228,7 +228,7 @@
     },
     {
         "id": 23,
-        "nombre": "Comida Ave 24",
+        "nombre": "Comida Ave 8",
         "descripcion": "esta es la comida de ave numero 8",
         "tipo": "ave",
         "cantidad": 1,

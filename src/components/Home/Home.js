@@ -1,7 +1,7 @@
 import './Home.css';
 
 import fondo from '../../img/fondo.png' ;
-import flecha from '../../img/flecha_abajo.png' ;
+import flecha from '../../img/flecha.png' ;
 
 const Home = () => {
 
@@ -13,8 +13,8 @@ const Home = () => {
                     tu mascota</span></h1>
                 <p className="main__texto__subtitulo">Tenemos los mejores servicios veterinarios del pais al un paso de tu hogar
                 </p>
-                <a className="main__boton" href="/">
-                    <p className="main__boton__texto">Saber más</p>
+                <a className="main__boton" href='/itemList'>
+                    <p className="main__boton__texto">Pet Shop</p>
                     <img src={flecha} alt="flecha" className="main__boton__flecha"/>
                 </a>
             </div>
