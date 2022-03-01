@@ -1,12 +1,12 @@
 
 .cart {
 
-    color: greenyellow;
+    color: white;
 
 }
 
 .cart:hover{
 
-    color: white;
+    color: rgb(0, 195, 255);
 
 }

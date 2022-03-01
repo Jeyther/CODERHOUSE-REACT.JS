@@ -29,9 +29,7 @@ const ItemDetailContainer = (props) => {
 
         promesa.then(resultado => {
 
-            // console.log(resultado[5]);
             setItem(resultado[itemID]);
-            console.log(itemID);
 
         })
 

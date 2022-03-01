@@ -7,7 +7,7 @@ import img_cart from './../../img/cart.png';
 
 const ItemList = (props) => {
 
-    const articulos = props.articulos.map(elemento => elemento);
+    const articulos = props.articulos;
 
     const [count, setCount] = useState(1);
     const [productos, setProducto] = useState([]);

@@ -1,32 +1,21 @@
 import React, { useState } from "react";
 import './ItemDetail.css'
 
-import img_cart from './../../img/cart.png';
+import ItemCount from "../ItemCount/ItemCount";
+import ItemDetailBtns from "../ItemDetailBtns/ItemDetailBtns";
+
 
 
 const ItemDetail = (props) => {
 
-    const [count, setCount] = useState(1);
-
     let item = props.producto;
 
-    const handlerClicAdd = () => {
+    let [cant, setCant] = useState(0);
 
-        if (count < props.stock) {
+    function onAdd(items) {
 
-            setCount(count + 1);
-
-        }
-
-
-    }
-    const handlerClicSubstract = () => {
-
-        if (count > props.initial) {
-
-            setCount(count - 1);
-
-        }
+        setCant(items);
+        console.log(items);
 
     }
 
@@ -46,25 +35,21 @@ const ItemDetail = (props) => {
 
                     <p className="producto__contenedor__datos__descripcion"> {item.descripcion}</p>
 
-                    <div>
-
-                        <div className="producto__contenedor__datos__cantidad">
-                            <button id="menos" onClick={handlerClicSubstract}>-</button>
-                            <input className="producto__contenedor__datos__cantidad__contador" id="cantidad" type="number" placeholder="cantidad"
-                                        min="1" value={count} max={props.stock} />
-                            <button id="mas" onClick={handlerClicAdd}>+</button>
-                        </div>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
 
                         <div className="producto__contenedor__datos__precio" >
                             <p id="precio">{item.precio}</p>
                             <p>$</p>
                         </div>
 
+                        {cant > 0 ?
+                            <ItemDetailBtns/> :
+                            <ItemCount initial='1' stock={12} addHandlerClick={(items) => onAdd(items)} />
+                        }
+
                     </div>
 
                 </div>
-
-                <button className="producto__contenedor__datos__boton" id="agregar">Agregar <img src={img_cart} className="producto__contenedor__datos__boton__cart" alt="img_Cart" /> </button>
 
             </div>
 

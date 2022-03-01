@@ -29,7 +29,7 @@ button {
 
 .producto__contenedor__img {
 
-    width: 250px;
+    width: 300px;
 
 }
 
@@ -46,6 +46,13 @@ button {
 
     font-size: 28px;
     color:black;
+
+}
+
+.producto__contenedor__datos__descripcion{
+
+    color: black;
+    font-size: 24px;
 
 }
 
@@ -67,7 +74,7 @@ button {
 
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 30px;
 
     font-size: 18px;
 
@@ -75,105 +82,17 @@ button {
     
 }
 
-
-.producto__contenedor__datos__cantidad {
-
-    display: flex;
-
-    border: 1px solid orange;
-    width: 80px;
-    height: 25px;
-
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.producto__contenedor__datos__cantidad>button {
-
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: orange;
-    border: none;
-    width: 50px;
-    height: 100%;
-}
-
-.producto__contenedor__datos__cantidad>button:hover {
-
-    background-color: orangered;
-
-
-}
-
-
-.producto__contenedor__datos__cantidad__contador {
-
-    height: 18px;
-    text-align: center;
-    font-size: 16px;
-
-    width: 100%;
-    height: 100%;
-
-    border: none;
-
-    -moz-appearance: textfield;
-
-}
-
-.producto__contenedor__datos__cantidad__contador::-webkit-inner-spin-button,
-.producto__contenedor__datos__cantidad__contador::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-
-
 .producto__contenedor__datos__precio {
 
     display: flex;
     gap: 10px;
 
-    font-size: 32px;
+    color: black;
+    font-size: 48px;
     font-weight: 600;
 
 }
 
-.producto__contenedor__datos__boton {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    font-size: 18px;
-    color: white;
-    background-color: orange;
-
-    border-radius: 50px;
-    border: none;
-
-    cursor: pointer;
-
-    padding: 10px 10px;
-
-    width: 50%;
-}
-
-.producto__contenedor__datos__boton__cart {
-
-    width: 25px;
-
-}
-
-.producto__contenedor__datos__boton:hover {
-
-    background-color: orangered;
-
-}
 
 .seleccionado {
 

@@ -7,7 +7,7 @@
 #contenedor{
 
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     column-gap: 40px;
     row-gap: 20px;
 
@@ -170,13 +170,6 @@
     color: black;
     font-size: 30px;
     font-weight: 600;
-
-}
-
-div p {
-
-    color: black;
-    font-size: 24px;
 
 }
 
