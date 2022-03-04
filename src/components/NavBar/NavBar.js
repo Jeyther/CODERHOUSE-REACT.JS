@@ -1,6 +1,7 @@
 import React from "react";
 import logo from '../../img/LOGO.png';
 import './NavBar.css';
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
@@ -9,29 +10,29 @@ const NavBar = () => {
 
         <nav className="navbar">
 
-            <a className="logo" href="/">
+            <Link to="/" className="logo">
                 <img className="logo__img" src={logo} alt="PetCity_logo" />
-            </a>
+            </Link>
 
             <div className="navegacion">
                 <ul>
                     <li>
-                        <a className="activo" aria-current="page" href="/">Inicio</a>
+                        <Link to="/" className="activo" aria-current="page" >Inicio</Link>
                     </li>
                     <li>
-                        <a href="/">Servicios</a>
+                        <Link to="/">Servicios</Link>
                     </li>
                     <li>
-                        <a href="/itemList">PetShop</a>
+                        <Link to="/itemList">PetShop</Link>
                     </li>
                     <li>
-                        <a href="/">Ventajas</a>
+                        <Link to="/">Ventajas</Link>
                     </li>
                     <li>
-                        <a href="/">Nosotros</a>
+                        <Link to="/">Nosotros</Link>
                     </li>
                     <li>
-                        <a href="/">Contacto</a>
+                        <Link to="/">Contacto</Link>
                     </li>
                 </ul>
             </div>

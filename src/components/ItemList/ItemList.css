@@ -4,10 +4,10 @@
 
 }
 
-#contenedor{
+#contenedor {
 
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     row-gap: 20px;
 
@@ -86,22 +86,17 @@
 
 }
 
-.elemento>div {
+.elemento a>div {
 
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+
     margin: 5px 0px;
 
 }
 
-.elemento>div div {
 
-    display: flex;
-    font-size: 18px;
-
-}
 
 .elemento__cantidad {
 
@@ -154,7 +149,7 @@
 
 .elemento__cantidad__contador:focus {
 
-    border:none;
+    border: none;
     outline: none;
 
 }
@@ -175,11 +170,9 @@
 
 .elemento__boton {
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    margin: 0 auto;
 
-    font-size: 20px;
+    font-size: 22px;
     color: white;
     background-color: #FBB158;
 

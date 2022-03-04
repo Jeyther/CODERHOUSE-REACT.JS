@@ -47,6 +47,7 @@ export const CustomCartContext = ({ children }) => {
         for (const producto of productos) {
 
             if (producto.item.id === productID) {
+                console.log('duplicado: ',productID);
                 return true;
             }
         }
@@ -59,6 +60,7 @@ export const CustomCartContext = ({ children }) => {
 
         productos.map(function (producto) {
             if (producto.item.id === productID) {
+                console.log('correctamente modificado ',productID);
                 producto.quantity = quantity;
             }
 
