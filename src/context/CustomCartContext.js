@@ -4,21 +4,23 @@ import { CartContext } from "./CartContext";
 export const CustomCartContext = ({ children }) => {
 
     const [productos, setProductos] = useState([]);
+    const [cartCount, setCartCount] = useState(0);
 
     const addProduct = (newProduct, quantity) => {
 
-        
+
         if (isInCart(newProduct.id)) {
-            
-            modifyProduct(newProduct.id,quantity);
-            
+
+            modifyProduct(newProduct.id, quantity);
+
         } else {
-            console.log('entro ',newProduct, quantity);
-            
+
+            console.log('entro ', newProduct, quantity);
+
             setProductos([...productos, { item: newProduct, quantity: quantity }]);
-            console.log(productos);
         }
 
+        setCartCount((prev) => prev + quantity);
 
     }
 
@@ -65,9 +67,9 @@ export const CustomCartContext = ({ children }) => {
 
     }
 
-    return(
+    return (
 
-        <CartContext.Provider value={{productos, addProduct, removeProduct, clean}}>
+        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, clean }}>
 
             {children}
 

@@ -1,3 +1,8 @@
+.cartWidgetContainer{
+
+    position: relative;
+
+}
 
 .cart {
 
@@ -9,4 +14,21 @@
 
     color: rgb(0, 195, 255);
 
+}
+
+.cartCount{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    padding: 0px;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
 }
