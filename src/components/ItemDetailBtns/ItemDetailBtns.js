@@ -6,7 +6,7 @@ import "./ItemDetailBtns.css"
 function BtnsItemDetail() {
   return (
     <>
-      <Link to="/" className="boton__seguirComprando">
+      <Link to="/itemList" className="boton__seguirComprando">
         Seguir comprando
       </Link>
       <Link to="/cart" className="boton__verCarrito">

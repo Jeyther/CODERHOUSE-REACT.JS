@@ -61,7 +61,8 @@ export const CustomCartContext = ({ children }) => {
         productos.map(function (producto) {
             if (producto.item.id === productID) {
                 console.log('correctamente modificado ',productID);
-                producto.quantity = quantity;
+                console.log('quantity: ', quantity);
+                producto.quantity += quantity;
             }
 
             return producto;

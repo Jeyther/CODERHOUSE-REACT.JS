@@ -79,8 +79,8 @@ const ItemList = (props) => {
 
                                     <div>
 
-                                        <p className="elemento__precio" id="precio">{articulo.precio}</p>
-                                        <p>$</p>
+                                        <p className="elemento__precio" id="precio">{articulo.precio}
+                                        <span>$</span></p>
                                         
                                     </div>
 
