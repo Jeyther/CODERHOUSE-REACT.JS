@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './ItemDetail.css'
 
 import ItemCount from "../ItemCount/ItemCount";
 import ItemDetailBtns from "../ItemDetailBtns/ItemDetailBtns";
+import { CartContext } from "../../context/CartContext";
 
 
 
@@ -10,12 +11,15 @@ const ItemDetail = (props) => {
 
     let item = props.producto;
 
-    let [cant, setCant] = useState(0);
+    const [cant, setCant] = useState(0);
+
+    const carritoContext = useContext(CartContext);
 
     function onAdd(items) {
 
         setCant(items);
-        console.log(items);
+
+        carritoContext.addProduct(item,items); 
 
     }
 

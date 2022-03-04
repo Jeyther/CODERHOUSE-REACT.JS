@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import './ItemList.css';
-
 import img_cart from './../../img/cart.png';
+import { CustomCartContext } from "../../context/CustomCartContext";
 
 // import articulos from './../../articulos.json';
 
+
 const ItemList = (props) => {
+    
+    const isDarkMode = useContext(CustomCartContext);
+    console.log('isDarkMode ',isDarkMode);
 
     const articulos = props.articulos;
 
@@ -15,9 +19,9 @@ const ItemList = (props) => {
     useEffect(() => {
 
         const promesa = new Promise((resolve, reject) => {
-    
-            setTimeout( () => { resolve(articulos) }, 2000);
-    
+
+            setTimeout(() => { resolve(articulos) }, 2000);
+
         });
         promesa.then(resultado => {
 
@@ -25,7 +29,7 @@ const ItemList = (props) => {
 
         })
 
-    },[articulos]);
+    }, [articulos]);
 
 
     const handlerClicAdd = () => {
@@ -49,52 +53,52 @@ const ItemList = (props) => {
     }
 
     return (
-    
+
         <div id="contenedor">
 
             {
-                productos.length === 0 ? 
-                <>
-                    <p style={{fontSize:'32px', color: 'white'}}>Cargando...</p>
-                </>            
-                :
-                productos.map((articulo) => {
+                productos.length === 0 ?
+                    <>
+                        <p style={{ fontSize: '32px', color: 'white' }}>Cargando...</p>
+                    </>
+                    :
+                    productos.map((articulo) => {
 
-                    return (
+                        return (
 
-                        <div className="elemento">
-                            
-                            <a href={"/itemList/"+articulo.id}>
+                            <div className="elemento">
 
-                                <img className="elemento__img" src={articulo.img} alt={articulo.img} />
+                                <a href={"/itemList/" + articulo.id}>
 
-                                <p className="id-articulo" key={articulo.id}>{articulo.id}</p>
+                                    <img className="elemento__img" src={articulo.img} alt={articulo.img} />
 
-                                <h4 className="elemento__titulo" id="nombre">{articulo.nombre}</h4>
+                                    <p className="id-articulo" key={articulo.id}>{articulo.id}</p>
 
-                                <p className="elemento__descripcion">{articulo.descripcion}</p>
+                                    <h4 className="elemento__titulo" id="nombre">{articulo.nombre}</h4>
 
-                            </a>
+                                    <p className="elemento__descripcion">{articulo.descripcion}</p>
 
-                            <div>
-                                <div className="elemento__cantidad">
-                                    <button id="menos" onClick={handlerClicSubstract}>-</button>
-                                    <input className="elemento__cantidad__contador" id="cantidad" type="number" placeholder="cantidad"
-                                        min="1" value={count} max={props.stock} />
-                                    <button id="mas" onClick={handlerClicAdd}>+</button>
-                                </div>
+                                </a>
+
                                 <div>
-                                    <p className="elemento__precio" id="precio">{articulo.precio}</p>
-                                    <p>$</p>
+                                    <div className="elemento__cantidad">
+                                        <button id="menos" onClick={handlerClicSubstract}>-</button>
+                                        <input className="elemento__cantidad__contador" id="cantidad" type="number" placeholder="cantidad"
+                                            min="1" value={count} max={props.stock} />
+                                        <button id="mas" onClick={handlerClicAdd}>+</button>
+                                    </div>
+                                    <div>
+                                        <p className="elemento__precio" id="precio">{articulo.precio}</p>
+                                        <p>$</p>
+                                    </div>
                                 </div>
+
+                                <button className="elemento__boton" id="agregar">Agregar <img src={img_cart} alt='img_carrito' className="elemento__boton__cart" /> </button>
+
                             </div>
+                        )
 
-                            <button className="elemento__boton" id="agregar">Agregar <img src={img_cart} alt='img_carrito' className="elemento__boton__cart" /> </button>
-
-                        </div>
-                    )
-
-                })
+                    })
             }
 
 

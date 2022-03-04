@@ -4,7 +4,6 @@
         "nombre": "Comida Perro 1",
         "descripcion": "esta es la comida de perro numero 1",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 60,
         "img": "../img/articulos/perro/comida_perro-1.jpg"
     },
@@ -13,7 +12,6 @@
         "id": 1,
         "descripcion": "esta es la comida de perro numero 2",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 100,
         "img": "../img/articulos/perro/comida_perro-2.jpg"
         
@@ -23,7 +21,6 @@
         "nombre": "Comida Perro 3",
         "descripcion": "esta es la comida de perro numero 3",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 150,
         "img": "../img/articulos/perro/comida_perro-3.jpg"
         
@@ -33,7 +30,6 @@
         "nombre": "Comida Perro 4",
         "descripcion": "esta es la comida de perro numero 4",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 80,
         "img": "../img/articulos/perro/comida_perro-4.jpg"
         
@@ -43,7 +39,6 @@
         "nombre": "Comida Perro 5",
         "descripcion": "esta es la comida de perro numero 5",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 300,
         "img": "../img/articulos/perro/comida_perro-5.jpg"
         
@@ -53,7 +48,6 @@
         "nombre": "Comida Perro 6",
         "descripcion": "esta es la comida de perro numero 6",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 750,
         "img": "../img/articulos/perro/comida_perro-6.jpg"
         
@@ -63,7 +57,6 @@
         "nombre": "Comida Perro 7",
         "descripcion": "esta es la comida de perro numero 7",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 90,
         "img": "../img/articulos/perro/comida_perro-7.jpg"
         
@@ -73,7 +66,6 @@
         "nombre": "Comida Perro 8",
         "descripcion": "esta es la comida de perro numero 8",
         "tipo": "perro",
-        "cantidad": 1,
         "precio": 210,
         "img": "../img/articulos/perro/comida_perro-8.jpg"
         
@@ -83,7 +75,6 @@
         "nombre": "Comida Gato 1",
         "descripcion": "esta es la comida de gato numero 1",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 60,
         "img": "../img/articulos/gato/comida_gato-1.jpg"
     },
@@ -92,7 +83,6 @@
         "id": 9,
         "descripcion": "esta es la comida de gato numero 2",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 100,
         "img": "../img/articulos/gato/comida_gato-2.jpg"
         
@@ -102,7 +92,6 @@
         "nombre": "Comida Gato 3",
         "descripcion": "esta es la comida de gato numero 3",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 150,
         "img": "../img/articulos/gato/comida_gato-3.jpg"
         
@@ -112,7 +101,6 @@
         "nombre": "Comida Gato 4",
         "descripcion": "esta es la comida de gato numero 4",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 80,
         "img": "../img/articulos/gato/comida_gato-4.jpg"
         
@@ -122,7 +110,6 @@
         "nombre": "Comida Gato 5",
         "descripcion": "esta es la comida de gato numero 5",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 300,
         "img": "../img/articulos/gato/comida_gato-5.jpg"
         
@@ -132,7 +119,6 @@
         "nombre": "Comida Gato 6",
         "descripcion": "esta es la comida de gato numero 6",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 750,
         "img": "../img/articulos/gato/comida_gato-6.jpg"
         
@@ -142,7 +128,6 @@
         "nombre": "Comida Gato 7",
         "descripcion": "esta es la comida de gato numero 7",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 90,
         "img": "../img/articulos/gato/comida_gato-7.jpg"
         
@@ -152,7 +137,6 @@
         "nombre": "Comida Gato 8",
         "descripcion": "esta es la comida de gato numero 8",
         "tipo": "gato",
-        "cantidad": 1,
         "precio": 210,
         "img": "../img/articulos/gato/comida_gato-8.jpg"
         
@@ -162,7 +146,6 @@
         "nombre": "Comida Ave 1",
         "descripcion": "esta es la comida de ave numero 1",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 60,
         "img": "../img/articulos/ave/comida_ave-1.jpg"
     },
@@ -171,7 +154,6 @@
         "id": 17,
         "descripcion": "esta es la comida de ave numero 2",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 100,
         "img": "../img/articulos/ave/comida_ave-2.jpg"
         
@@ -181,7 +163,6 @@
         "nombre": "Comida Ave 3",
         "descripcion": "esta es la comida de ave numero 3",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 150,
         "img": "../img/articulos/ave/comida_ave-3.jpg"
         
@@ -191,7 +172,6 @@
         "nombre": "Comida Ave 4",
         "descripcion": "esta es la comida de ave numero 4",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 80,
         "img": "../img/articulos/ave/comida_ave-4.jpg"
         
@@ -201,7 +181,6 @@
         "nombre": "Comida Ave 5",
         "descripcion": "esta es la comida de ave numero 5",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 300,
         "img": "../img/articulos/ave/comida_ave-5.jpg"
         
@@ -211,7 +190,6 @@
         "nombre": "Comida Ave 6",
         "descripcion": "esta es la comida de ave numero 6",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 750,
         "img": "../img/articulos/ave/comida_ave-6.jpg"
         
@@ -221,7 +199,6 @@
         "nombre": "Comida Ave 7",
         "descripcion": "esta es la comida de ave numero 7",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 90,
         "img": "../img/articulos/ave/comida_ave-7.jpg"
         
@@ -231,7 +208,6 @@
         "nombre": "Comida Ave 8",
         "descripcion": "esta es la comida de ave numero 8",
         "tipo": "ave",
-        "cantidad": 1,
         "precio": 210,
         "img": "../img/articulos/ave/comida_ave-8.jpg"
         

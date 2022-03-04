@@ -12,6 +12,7 @@ const ItemCount = (props) => {
         if (count < props.stock) {
 
             setCount(count + 1);
+            console.log('count ', count);
 
         }
 
