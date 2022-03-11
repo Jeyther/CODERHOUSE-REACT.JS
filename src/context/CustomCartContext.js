@@ -15,8 +15,6 @@ export const CustomCartContext = ({ children }) => {
 
         } else {
 
-            console.log('entro ', newProduct, quantity);
-
             setProductos([...productos, { item: newProduct, quantity: quantity }]);
         }
 
@@ -26,13 +24,17 @@ export const CustomCartContext = ({ children }) => {
 
     const removeProduct = (productID) => {
 
-        for (const producto of productos) {
+        let elementos = productos;
 
-            if (producto.item.id === productID) {
-                productos.splice(producto);
+        for (const elemento of elementos) {
+
+            if (elemento.item.id === productID) {
+                elementos.splice(elemento,1);
             }
 
         }
+
+        setProductos(elementos);
 
     }
 
@@ -47,7 +49,6 @@ export const CustomCartContext = ({ children }) => {
         for (const producto of productos) {
 
             if (producto.item.id === productID) {
-                console.log('duplicado: ',productID);
                 return true;
             }
         }
@@ -60,8 +61,6 @@ export const CustomCartContext = ({ children }) => {
 
         productos.map(function (producto) {
             if (producto.item.id === productID) {
-                console.log('correctamente modificado ',productID);
-                console.log('quantity: ', quantity);
                 producto.quantity += quantity;
             }
 

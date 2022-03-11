@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import './ItemList.css';
 import { Link } from "react-router-dom";
-import img_cart from './../../img/cart.png';
+import spinner from './../../img/spinner.gif';
 
 // import articulos from './../../articulos.json';
 
@@ -57,7 +57,9 @@ const ItemList = (props) => {
             {
                 productos.length === 0 ?
                     <>
-                        <p style={{ fontSize: '32px', color: 'white' }}>Cargando...</p>
+
+                        <img class="itemList__spinner"src={spinner} alt="spinner"/>
+                        
                     </>
                     :
                     productos.map((articulo) => {

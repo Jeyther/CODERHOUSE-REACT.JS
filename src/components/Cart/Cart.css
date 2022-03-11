@@ -1,0 +1,14 @@
+#contenedor-productos{
+
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.precio-total{
+
+    font-size: 28px;
+
+}

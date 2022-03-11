@@ -1,33 +1,49 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import EmptyCart from "./EmptyCart";
+import "./Cart.css";
+import ItemCart from "./ItemCart/ItemCart";
 
 const Cart = () => {
 
     const { productos } = useContext(CartContext);
-    console.log(productos);
+    const carritoContext = useContext(CartContext);
+
+
+    let total = 0;
+
+    for (const producto of productos) {
+
+        total += (producto.item.precio * producto.quantity);
+
+    }
+
+    function eliminarProduco(productoID){
+
+        carritoContext.removeProduct(productoID)
+
+    }
 
     return (
 
-        <>
+        <div id="contenedor-productos">
 
             {productos.length === 0 ?
-                (<p>El carrito esta vacio</p>)
+                <EmptyCart />
                 :
                 (productos.map((i) => {
 
                     return (
 
-                        <>
-                            <p>{i.item.nombre} x {i.quantity} = {i.quantity * i.item.precio}</p>
-                            <img src={i.item.img} alt={i.item.nombre} style={{width: 200}}/>
-                        </>
+                        <ItemCart producto={i} addHandlerClick={(productoID) => eliminarProduco(productoID)}/>
 
                     )
 
-                }))}
+                }))
+            }
+            {productos.length !== 0 && <p className="precio-total">Precio Total: {total}$</p>}
 
-
-        </>
+        </div >
     )
 
 

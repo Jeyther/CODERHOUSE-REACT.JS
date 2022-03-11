@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import articulos from './../../articulos.json'
 
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
 
     const { itemID } = useParams();
 

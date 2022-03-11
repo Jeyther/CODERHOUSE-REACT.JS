@@ -12,6 +12,15 @@
     row-gap: 20px;
 
     margin-top: 50px;
+    position: relative;
+
+}
+
+.itemList__spinner{
+
+    position: absolute;
+    left: 280px;
+    top: 150px;
 
 }
 
