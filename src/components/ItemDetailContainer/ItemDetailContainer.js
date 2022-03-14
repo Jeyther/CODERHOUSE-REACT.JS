@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
             setTimeout( () => { 
             resolve(articulos)
-            }, 2000);
+            }, 1000);
 
         })
 

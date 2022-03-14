@@ -30,9 +30,12 @@ export const CustomCartContext = ({ children }) => {
 
             if (elemento.item.id === productID) {
                 elementos.splice(elemento,1);
+                setCartCount(cartCount-elemento.quantity);
             }
 
         }
+
+        console.log(elementos);
 
         setProductos(elementos);
 

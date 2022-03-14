@@ -18,7 +18,7 @@ const ItemList = (props) => {
 
         const promesa = new Promise((resolve, reject) => {
 
-            setTimeout(() => { resolve(articulos) }, 2000);
+            setTimeout(() => { resolve(articulos) }, 1000);
 
         });
         promesa.then(resultado => {
@@ -30,26 +30,6 @@ const ItemList = (props) => {
     }, [articulos]);
 
 
-    const handlerClicAdd = () => {
-
-        if (count < props.stock) {
-
-            setCount(count + 1);
-
-        }
-
-
-    }
-    const handlerClicSubstract = () => {
-
-        if (count > props.initial) {
-
-            setCount(count - 1);
-
-        }
-
-    }
-
     return (
 
         <div id="contenedor">
@@ -58,7 +38,7 @@ const ItemList = (props) => {
                 productos.length === 0 ?
                     <>
 
-                        <img class="itemList__spinner"src={spinner} alt="spinner"/>
+                        <img className="itemList__spinner"src={spinner} alt="spinner"/>
                         
                     </>
                     :
@@ -66,7 +46,7 @@ const ItemList = (props) => {
 
                         return (
 
-                            <div className="elemento">
+                            <div className="elemento" key={articulo.id}>
 
                                 <Link to={"/itemList/" + articulo.id}>
 
