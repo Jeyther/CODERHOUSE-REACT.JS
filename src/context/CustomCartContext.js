@@ -24,26 +24,32 @@ export const CustomCartContext = ({ children }) => {
 
     const removeProduct = (productID) => {
 
+        // let elementos = productos.filter((e)=> e.id !== productID);
         let elementos = productos;
+        console.log('productos: ', productos);
+        console.log('productID ', productID);
 
         for (const elemento of elementos) {
 
+            console.log('id elemento for: ', elemento.item.id);
+            
             if (elemento.item.id === productID) {
-                elementos.splice(elemento,1);
-                setCartCount(cartCount-elemento.quantity);
+                console.log('entro ', elemento.item.id);
+                elementos.splice(elemento, 1);//no estoy indicando el elemento a eliminar correctamente
+                setCartCount(cartCount - elemento.quantity);
+                break;
             }
 
         }
-
-        console.log(elementos);
-
         setProductos(elementos);
+        console.log('elementos: ',elementos);
 
     }
 
     const clean = () => {
 
-        productos.clean();
+        setCartCount(0);
+        setProductos([]);
 
     }
 

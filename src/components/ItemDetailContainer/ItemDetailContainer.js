@@ -21,9 +21,9 @@ const ItemDetailContainer = () => {
 
         const promesa = new Promise((resolve, reject) => {
 
-            setTimeout( () => { 
+            // setTimeout( () => { 
             resolve(articulos)
-            }, 1000);
+            // }, 1000);
 
         })
 

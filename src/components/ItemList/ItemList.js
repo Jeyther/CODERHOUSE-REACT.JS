@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import './ItemList.css';
 import { Link } from "react-router-dom";
 import spinner from './../../img/spinner.gif';
@@ -11,14 +11,15 @@ const ItemList = (props) => {
 
     const articulos = props.articulos;
 
-    const [count, setCount] = useState(1);
     const [productos, setProducto] = useState([]);
 
     useEffect(() => {
 
         const promesa = new Promise((resolve, reject) => {
 
-            setTimeout(() => { resolve(articulos) }, 1000);
+            // setTimeout(() => { 
+                resolve(articulos)
+            //  }, 1000);
 
         });
         promesa.then(resultado => {
