@@ -20,7 +20,7 @@ const ItemCart = (props) => {
                     <p class="elemento-carrito__cantidad" id="cantidad">x{cantidad}</p>
 
                     <div class="elemento-carrito__precio">
-                        <p id="precio">{producto.precio*cantidad}</p>
+                        <p id="precio-cart">{producto.precio*cantidad}</p>
                         <p>$</p>
                     </div>
 

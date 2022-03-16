@@ -8,42 +8,21 @@ import spinner from './../../img/spinner.gif';
 
 const ItemList = (props) => {
 
-
     const articulos = props.articulos;
-
-    const [productos, setProducto] = useState([]);
-
-    useEffect(() => {
-
-        const promesa = new Promise((resolve, reject) => {
-
-            // setTimeout(() => { 
-                resolve(articulos)
-            //  }, 1000);
-
-        });
-        promesa.then(resultado => {
-
-            setProducto(resultado)
-
-        })
-
-    }, [articulos]);
-
 
     return (
 
         <div id="contenedor">
 
             {
-                productos.length === 0 ?
+                articulos.length === 0 ?
                     <>
 
                         <img className="itemList__spinner"src={spinner} alt="spinner"/>
                         
                     </>
                     :
-                    productos.map((articulo) => {
+                    articulos.map((articulo) => {
 
                         return (
 

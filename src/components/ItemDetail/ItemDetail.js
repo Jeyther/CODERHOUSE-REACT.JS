@@ -15,11 +15,11 @@ const ItemDetail = (props) => {
 
     const carritoContext = useContext(CartContext);
 
-    function onAdd(items) {
+    function onAdd(cantidad) {
 
-        setCant(items);
+        setCant(cantidad);
 
-        carritoContext.addProduct(item,items); 
+        carritoContext.addProduct(item,cantidad); 
 
     }
 
@@ -48,7 +48,7 @@ const ItemDetail = (props) => {
 
                         {cant > 0 ?
                             <ItemDetailBtns/> :
-                            <ItemCount initial='1' stock={12} addHandlerClick={(items) => onAdd(items)} />
+                            <ItemCount initial='1' stock={12} addHandlerClick={(cantidad) => onAdd(cantidad)} />
                         }
 
                     </div>
