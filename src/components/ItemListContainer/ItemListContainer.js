@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../utils/firebase';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
     const [elementos, setElementos] = useState([]);
 
@@ -25,11 +25,52 @@ const ItemListContainer = (props) => {
 
     }
 
+    const clickCategoria = (event) => {
+
+        let target = event.target;
+
+        // while (target !== this) {
+
+        if (target.id !== "todos") {
+
+            seleccionarCategoria(target.id);
+
+        } else {
+
+            getData();
+
+        }
+
+        // target = target.parentElement;
+
+        // }
+        // 
+    }
+
+    const seleccionarCategoria = async (categoria) => {
+
+        const q = query(collection(db, "items"), where("categoria", "==", categoria));
+
+        const querySnapshot = await getDocs(q);
+
+        const items = querySnapshot.docs.map(doc => { return { id: doc.id, ...doc.data() } });
+
+        setElementos(items);
+
+    }
+
     return (
 
         <div>
 
-            <h1 id="titulo">¡Hola Esto es un {props.tittle}!</h1>
+            <div className="petshop__contenedor__categorias" id="categorias" onClick={clickCategoria}>
+
+                <button id="perro">Perros</button>
+                <button id="gato">Gatos</button>
+                <button id="ave">Aves</button>
+                <button id="todos" className="seleccionado">Todos</button>
+
+            </div>
 
             <ItemList stock='10' initial='1' articulos={elementos} />
 
