@@ -6,7 +6,7 @@ const BuyerContainer = () => {
     const carritoContext = useContext(CartContext);
     const { productos } = useContext(CartContext);
 
-    // const [buyerID, setBuyerID] = useState([]);
+    const [buyerID, setBuyerID] = useState('');
 
     const sendOrden = (e) => {
 
@@ -22,7 +22,11 @@ const BuyerContainer = () => {
 
         let total = productos.reduce((acc,i)=>(acc + (i.item.precio * i.quantity)),0);
 
-        carritoContext.setOrden(buyer, total)
+        carritoContext.setOrden(buyer, total).then((res)=>{
+
+            setBuyerID(res);
+
+        })
 
         // setBuyerID(id);
 
@@ -41,7 +45,7 @@ const BuyerContainer = () => {
 
             </form>
 
-            {/* <p>{buyerID}</p> */}
+            {buyerID !=='' && <p>Su numero de compra es: {buyerID}</p>}
 
         </div>
     )

@@ -97,7 +97,8 @@ export const CustomCartContext = ({ children }) => {
 
             let buyerID = docRef.id;
 
-            console.log('Id de la compra: ',buyerID);
+
+            return buyerID;
 
         } catch (error) {
             
