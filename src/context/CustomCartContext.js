@@ -1,5 +1,7 @@
+import { addDoc, collection, doc, Timestamp, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { CartContext } from "./CartContext";
+import { db } from '../utils/firebase';
 
 export const CustomCartContext = ({ children }) => {
 
@@ -24,25 +26,23 @@ export const CustomCartContext = ({ children }) => {
 
     const removeProduct = (productID) => {
 
-        // let elementos = productos.filter((e)=> e.id !== productID);
-        let elementos = productos;
-        console.log('productos: ', productos);
-        console.log('productID ', productID);
+        let elementosAlt = productos.filter((e)=> e.item.id !== productID);
 
-        for (const elemento of elementos) {
+        /* let elementos = productos;
 
-            console.log('id elemento for: ', elemento.item.id);
+        for (const [i, elemento] of elementos.entries()) {
             
             if (elemento.item.id === productID) {
-                console.log('entro ', elemento.item.id);
-                elementos.splice(elemento, 1);//no estoy indicando el elemento a eliminar correctamente
+
+                elementos.splice(i, 1);
                 setCartCount(cartCount - elemento.quantity);
                 break;
+
             }
 
-        }
-        setProductos(elementos);
-        console.log('elementos: ',elementos);
+        } */
+        
+        setProductos(elementosAlt);
 
     }
 
@@ -78,9 +78,54 @@ export const CustomCartContext = ({ children }) => {
 
     }
 
+    const setOrden = async (buyer, total) => {
+
+        let orden = {
+
+            buyer,
+            productos,
+            date: Timestamp.fromDate(new Date()),
+            total
+
+        }
+
+        const ordenes = collection(db,'orders')
+
+        try {
+    
+            const docRef = await addDoc(ordenes, orden);
+
+            let buyerID = docRef.id;
+
+            console.log('Id de la compra: ',buyerID);
+
+        } catch (error) {
+            
+            console.log('error al obtener la referencia:',error);
+
+        }
+
+    } 
+
+    const updateOrden = async ()=> {
+
+        const queryDoc = doc(db,'orders','xWWa7uQauYCPgR3vpYSi');
+
+        await updateDoc(queryDoc, {
+
+            buyer:{
+
+                name: 'Jeyther'
+
+            }
+
+        })
+
+    }
+
     return (
 
-        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, clean }}>
+        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, clean, setOrden }}>
 
             {children}
 

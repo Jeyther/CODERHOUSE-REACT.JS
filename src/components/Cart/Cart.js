@@ -18,7 +18,7 @@ const Cart = () => {
 
     }
 
-    function eliminarProduco(productoID){
+    function eliminarProducto(productoID){
 
         carritoContext.removeProduct(productoID)
 
@@ -35,7 +35,7 @@ const Cart = () => {
 
                     return (
 
-                        <ItemCart producto={i} addHandlerClick={(productoID) => eliminarProduco(productoID)}/>
+                        <ItemCart key={i.id} producto={i} addHandlerClick={(productoID) => eliminarProducto(productoID)}/>
 
                     )
 

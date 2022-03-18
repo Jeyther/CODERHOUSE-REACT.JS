@@ -29,8 +29,6 @@ const ItemListContainer = () => {
 
         let target = event.target;
 
-        // while (target !== this) {
-
         if (target.id !== "todos") {
 
             seleccionarCategoria(target.id);
@@ -41,10 +39,6 @@ const ItemListContainer = () => {
 
         }
 
-        // target = target.parentElement;
-
-        // }
-        // 
     }
 
     const seleccionarCategoria = async (categoria) => {
