@@ -16,11 +16,14 @@
 
 }
 
-.itemList__spinner{
+.itemList__spinner {
 
     position: absolute;
-    left: 280px;
-    top: 150px;
+    top: 400px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 
 }
 

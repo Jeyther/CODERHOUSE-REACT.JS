@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './ItemList.css';
 import { Link } from "react-router-dom";
 import spinner from './../../img/spinner.gif';
 
-// import articulos from './../../articulos.json';
-
-
-const ItemList = (props) => {
-
-    const articulos = props.articulos;
+const ItemList = ({articulos}) => {
 
     return (
 
@@ -47,6 +42,7 @@ const ItemList = (props) => {
                                     </div>
 
                                     <button className="elemento__boton" id="agregar">Detalles</button>
+                                    
                                 </Link>
 
                             </div>

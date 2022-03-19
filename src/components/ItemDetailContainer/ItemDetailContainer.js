@@ -14,11 +14,11 @@ const ItemDetailContainer = () => {
     useEffect(() => {
 
         getItem();
-
+        
     });
-
+    
     const getItem = async () => {
-
+        
         const docRef = doc(db,"items",itemID);
         const docSnap = await getDoc(docRef);
 
@@ -26,6 +26,10 @@ const ItemDetailContainer = () => {
 
             setItem({id: docSnap.id, ...docSnap.data()});
             
+        }else{
+
+            console.log("Error al cargar el articulo: el articulo no existe");
+
         }
 
     }
@@ -34,7 +38,7 @@ const ItemDetailContainer = () => {
 
         <div>
 
-            <ItemDetail producto={item}  initial='1' stock = {12}/>
+            <ItemDetail producto={item}/>
 
         </div>
     )

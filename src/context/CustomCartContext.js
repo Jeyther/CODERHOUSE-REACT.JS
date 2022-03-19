@@ -18,6 +18,7 @@ export const CustomCartContext = ({ children }) => {
         } else {
 
             setProductos([...productos, { item: newProduct, quantity: quantity }]);
+            
         }
 
         setCartCount((prev) => prev + quantity);
@@ -26,23 +27,9 @@ export const CustomCartContext = ({ children }) => {
 
     const removeProduct = (productID) => {
 
-        let elementosAlt = productos.filter((e)=> e.item.id !== productID);
-
-        /* let elementos = productos;
-
-        for (const [i, elemento] of elementos.entries()) {
-            
-            if (elemento.item.id === productID) {
-
-                elementos.splice(i, 1);
-                setCartCount(cartCount - elemento.quantity);
-                break;
-
-            }
-
-        } */
+        let elementos = productos.filter((producto)=> producto.item.id !== productID);
         
-        setProductos(elementosAlt);
+        setProductos(elementos);
 
     }
 
@@ -68,12 +55,14 @@ export const CustomCartContext = ({ children }) => {
 
     const modifyProduct = (productID, quantity) => {
 
-        productos.map(function (producto) {
+        productos.map((producto) => {
+
             if (producto.item.id === productID) {
                 producto.quantity += quantity;
             }
 
             return producto;
+
         });
 
     }
@@ -126,7 +115,7 @@ export const CustomCartContext = ({ children }) => {
 
     return (
 
-        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, clean, setOrden }}>
+        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, clean, setOrden, updateOrden }}>
 
             {children}
 

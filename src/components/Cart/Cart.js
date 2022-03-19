@@ -6,23 +6,7 @@ import ItemCart from "./ItemCart/ItemCart";
 
 const Cart = () => {
 
-    const { productos } = useContext(CartContext);
-    const carritoContext = useContext(CartContext);
-
-
-    let total = 0;
-
-    for (const producto of productos) {
-
-        total += (producto.item.precio * producto.quantity);
-
-    }
-
-    function eliminarProducto(productoID){
-
-        carritoContext.removeProduct(productoID)
-
-    }
+    const { productos, removeProduct } = useContext(CartContext);
 
     return (
 
@@ -35,13 +19,12 @@ const Cart = () => {
 
                     return (
 
-                        <ItemCart key={i.id} producto={i} addHandlerClick={(productoID) => eliminarProducto(productoID)}/>
+                        <ItemCart key={i.id} producto={i} handlerClick={(productoID) => removeProduct(productoID)}/>
 
                     )
 
                 }))
             }
-            {productos.length !== 0 && <p className="precio-total">Precio Total: {total}$</p>}
 
         </div >
     )

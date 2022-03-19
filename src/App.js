@@ -22,7 +22,7 @@ function App() {
 
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/itemList' element={<ItemListContainer tittle='PetShop' />} />
+              <Route path='/itemList' element={<ItemListContainer/>} />
               <Route path='/itemList/:itemID' element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />} />
             </Routes>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { collection, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../utils/firebase';
 
 const ItemListContainer = () => {
@@ -62,11 +62,11 @@ const ItemListContainer = () => {
                 <button id="perro">Perros</button>
                 <button id="gato">Gatos</button>
                 <button id="ave">Aves</button>
-                <button id="todos" className="seleccionado">Todos</button>
+                <button id="todos">Todos</button>
 
             </div>
 
-            <ItemList stock='10' initial='1' articulos={elementos} />
+            <ItemList articulos={elementos} />
 
         </div>
     )

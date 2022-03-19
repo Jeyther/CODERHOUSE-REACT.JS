@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./ItemDetailBtns.css"
 
-function BtnsItemDetail() {
+const BtnsItemDetail = () => {
+
   return (
     <>
       <Link to="/itemList" className="boton__seguirComprando">
@@ -14,6 +15,7 @@ function BtnsItemDetail() {
       </Link>
     </>
   );
+
 }
 
 export default BtnsItemDetail;

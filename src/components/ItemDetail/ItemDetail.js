@@ -7,9 +7,7 @@ import { CartContext } from "../../context/CartContext";
 
 
 
-const ItemDetail = (props) => {
-
-    let item = props.producto;
+const ItemDetail = ({producto}) => {
 
     const [cant, setCant] = useState(0);
 
@@ -19,7 +17,7 @@ const ItemDetail = (props) => {
 
         setCant(cantidad);
 
-        carritoContext.addProduct(item,cantidad); 
+        carritoContext.addProduct(producto,cantidad); 
 
     }
 
@@ -27,28 +25,28 @@ const ItemDetail = (props) => {
 
         <div className="producto__contenedor" >
 
-            <img className="producto__contenedor__img" src={item.img} alt={item.nombre} />
+            <img className="producto__contenedor__img" src={producto.img} alt={producto.nombre} />
 
             <div className="producto__contenedor__datos" >
 
-                <h1 className="producto__contenedor__datos__titulo" id='nombre'> {item.nombre}</h1>
+                <h1 className="producto__contenedor__datos__titulo" id='nombre'> {producto.nombre}</h1>
 
-                <p className='id-producto'>{item.id}</p>
+                <p className='id-producto'>{producto.id}</p>
 
                 <div>
 
-                    <p className="producto__contenedor__datos__descripcion"> {item.descripcion}</p>
+                    <p className="producto__contenedor__datos__descripcion"> {producto.descripcion}</p>
 
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
 
                         <div className="producto__contenedor__datos__precio" >
-                            <p id="precio">{item.precio}</p>
+                            <p id="precio">{producto.precio}</p>
                             <p>$</p>
                         </div>
 
                         {cant > 0 ?
                             <ItemDetailBtns/> :
-                            <ItemCount initial='1' stock={12} addHandlerClick={(cantidad) => onAdd(cantidad)} />
+                            <ItemCount initial={1} stock={12} addHandlerClick={(cantidad) => onAdd(cantidad)} />
                         }
 
                     </div>

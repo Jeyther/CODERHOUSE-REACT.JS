@@ -4,10 +4,9 @@ import "./ItemCount.css";
 
 const ItemCount = (props) => {
 
-    const [cantidad, setCantidad] = useState(1);
+    const [cantidad, setCantidad] = useState(props.initial);
 
-
-    const handlerClicAdd = () => {
+    const handlerClickAdd = () => {
 
         if (cantidad < props.stock) {
 
@@ -17,7 +16,7 @@ const ItemCount = (props) => {
 
 
     }
-    const handlerClicSubstract = () => {
+    const handlerClickSub = () => {
 
         if (cantidad > props.initial) {
 
@@ -33,18 +32,15 @@ const ItemCount = (props) => {
 
             <div className="producto__contenedor__datos__cantidad">
 
-                <button id="menos" onClick={handlerClicSubstract}>-</button>
+                <button id="menos" onClick={handlerClickSub}>-</button>
 
-                <input className="producto__contenedor__datos__cantidad__contador" id="cantidad" type="number" placeholder="cantidad"
-                    min="1" value={cantidad} max={props.stock} />
+                <label className="producto__contenedor__datos__cantidad__contador">{cantidad}</label>
 
-                <button id="mas" onClick={handlerClicAdd}>+</button>
+                <button id="mas" onClick={handlerClickAdd}>+</button>
 
             </div>
 
-
-                <button className="producto__contenedor__datos__boton" id="agregar" onClick={() => props.addHandlerClick(cantidad)}>Agregar <img src={img_cart} className="producto__contenedor__datos__boton__cart" alt="img_Cart" /> </button>
-
+            <button className="producto__contenedor__datos__boton" onClick={() => props.addHandlerClick(cantidad)}>Agregar <img src={img_cart} className="producto__contenedor__datos__boton__cart" alt="img_Cart" /> </button>
 
         </div>
     )

@@ -7,6 +7,7 @@ import { CartContext } from "../../context/CartContext";
 const CartWidget = () => {
 
     const { cartCount } = useContext(CartContext);
+
     return (
 
         <div className ="cartWidgetContainer">
@@ -17,6 +18,7 @@ const CartWidget = () => {
             </Link>
 
             {cartCount !== 0 && <p className="cartCount">{cartCount}</p>}
+            
         </div>
     );
 

@@ -8,7 +8,7 @@ const ItemCart = (props) => {
 
     return (
 
-        <div className="elemento-carrito" id={producto.id}>
+        <div className="elemento-carrito" id={producto.id} key={props.key}>
 
             <img src={producto.img} alt="comida" className="elemento-carrito__img" />
 
@@ -24,7 +24,7 @@ const ItemCart = (props) => {
                         <p>$</p>
                     </div>
 
-                    <button id="eliminar" onClick={() => props.addHandlerClick(producto.id)}>
+                    <button id="eliminar" onClick={() => props.handlerClick(producto.id)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             className="bi bi-trash3" viewBox="0 0 16 16">
                             <path
