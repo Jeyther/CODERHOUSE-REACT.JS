@@ -21,17 +21,17 @@ const ItemList = ({articulos}) => {
 
                         return (
 
-                            <div className="elemento" key={articulo.id}>
+                            <div className="petshop__contenedor__productos__elemento" key={articulo.id}>
 
-                                <Link to={"/itemList/" + articulo.id}>
+                                <Link to={"/itemList/" + articulo.id} id='producto-seleccionado'> 
 
-                                    <img className="elemento__img" src={articulo.img} alt={articulo.img} />
+                                    <img className="petshop__contenedor__productos__elemento__img" src={articulo.img} alt={articulo.img} />
 
-                                    <p className="id-articulo" key={articulo.id}>{articulo.id}</p>
+                                    <p className="id-producto" key={articulo.id}>{articulo.id}</p>
 
-                                    <h4 className="elemento__titulo" id="nombre">{articulo.nombre}</h4>
+                                    <h4 className="petshop__contenedor__productos__elemento__titulo" id="nombre">{articulo.nombre}</h4>
 
-                                    <p className="elemento__descripcion">{articulo.descripcion}</p>
+                                    <p className="petshop__contenedor__productos__elemento__descripcion">{articulo.descripcion}</p>
 
 
                                     <div>

@@ -55,20 +55,36 @@ const ItemListContainer = () => {
 
     return (
 
-        <div>
+        <main className="petshop">
 
-            <div className="petshop__contenedor__categorias" id="categorias" onClick={clickCategoria}>
+            <h1 className="petshop__titulo">PetShop</h1>
 
-                <button id="perro">Perros</button>
-                <button id="gato">Gatos</button>
-                <button id="ave">Aves</button>
-                <button id="todos">Todos</button>
+            <div className="petshop__contenedor">
+
+                <div className="petshop__contenedor__categorias" id="categorias" onClick={clickCategoria}>
+
+                    <button id="perro">Perros</button>
+                    <button id="gato">Gatos</button>
+                    <button id="ave">Aves</button>
+                    <button id="todos" className="seleccionado">Todos</button>
+
+                </div>
+
+                <ItemList articulos={elementos} class="petshop__contenedor__productos" id="contenedor-productos" />
+
+                <div className="petshop__contenedor__paginacion">
+
+                    <ul id="paginacion">
+                        <li className="seleccionado" id="page_1">1</li>
+                        <li id="page_2">2</li>
+                        <li id="page_3">3</li>
+                    </ul>
+
+                </div>
 
             </div>
 
-            <ItemList articulos={elementos} />
-
-        </div>
+        </main>
     )
 
 }
