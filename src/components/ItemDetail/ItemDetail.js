@@ -1,11 +1,8 @@
 import React, { useContext, useState } from "react";
-import './ItemDetail.css'
 
 import ItemCount from "../ItemCount/ItemCount";
 import ItemDetailBtns from "../ItemDetailBtns/ItemDetailBtns";
 import { CartContext } from "../../context/CartContext";
-
-
 
 const ItemDetail = ({producto}) => {
 
@@ -27,7 +24,7 @@ const ItemDetail = ({producto}) => {
 
             <img className="producto__contenedor__img" src={producto.img} alt={producto.nombre} />
 
-            <div className="producto__contenedor__datos" >
+            <div className="producto__contenedor__datos">
 
                 <h1 className="producto__contenedor__datos__titulo" id='nombre'> {producto.nombre}</h1>
 
@@ -37,7 +34,7 @@ const ItemDetail = ({producto}) => {
 
                     <p className="producto__contenedor__datos__descripcion"> {producto.descripcion}</p>
 
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <div>
 
                         <div className="producto__contenedor__datos__precio" >
                             <p id="precio">{producto.precio}</p>

@@ -6,12 +6,11 @@ const NavBar = () => {
 
     return (
 
-        <div id="container">
             <nav className="navbar navbar-expand-lg navbar-dark fixed-top justify-content-md-center justify-content-start">
                 <div className="container-fluid">
 
                     <Link className="navbar-brand" to="/">
-                        <img className="header__logo " src="img/LOGO.png" alt="PetCity Logo" />
+                        <img className="header__logo " src="../img/LOGO.png" alt="PetCity Logo" />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -48,7 +47,6 @@ const NavBar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
 
     )
 

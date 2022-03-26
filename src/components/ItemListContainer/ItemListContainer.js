@@ -6,12 +6,14 @@ import { db } from '../../utils/firebase';
 const ItemListContainer = () => {
 
     const [elementos, setElementos] = useState([]);
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todos');
+    const [paginaSeleccionada, setPaginaSeleccionada] = useState('1');
 
     useEffect(() => {
 
         getData();
 
-    }, [])
+    }, [paginaSeleccionada])
 
     const getData = async () => {
 
@@ -21,21 +23,28 @@ const ItemListContainer = () => {
 
         datos.sort((a, b) => { return a.id - b.id; });
 
-        setElementos(datos);
+        paginaActual(datos);
 
     }
 
+
     const clickCategoria = (event) => {
 
-        let target = event.target;
+        let id = event.target.id;
 
-        if (target.id !== "todos") {
+        if (id !== 'categorias') {
 
-            seleccionarCategoria(target.id);
+            if (id !== "todos") {
 
-        } else {
+                seleccionarCategoria(id);
 
-            getData();
+            } else {
+
+                getData();
+
+            }
+
+            cambiarClaseCategoria(id);
 
         }
 
@@ -53,6 +62,68 @@ const ItemListContainer = () => {
 
     }
 
+    const cambiarClaseCategoria = (categoria) => {
+
+        setCategoriaSeleccionada(categoria);
+
+    }
+
+    const paginaActual = (datos) => {
+
+        if (paginaSeleccionada !== 'paginacion') {
+
+            switch (paginaSeleccionada) {
+
+                case '1':
+
+                    let arr1 = datos.slice(0, 10);
+
+                    setElementos(arr1)
+
+                    break;
+                case '2':
+
+                    let arr2 = datos.slice(10, 20);
+
+                    setElementos(arr2)
+
+                    break;
+                case '3':
+
+                    let arr3 = datos.slice(20, 24);
+
+                    setElementos(arr3)
+
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+
+
+    }
+
+    const clickPagina = (event) => {
+
+        let id = event.target.id;
+
+        if (id !== 'paginacion') {
+
+            setPaginaSeleccionada(id);
+
+        }
+    }
+
+
+    // const cambiarClasePagina = (pagina) => {
+
+
+
+    // }
+
     return (
 
         <main className="petshop">
@@ -63,21 +134,23 @@ const ItemListContainer = () => {
 
                 <div className="petshop__contenedor__categorias" id="categorias" onClick={clickCategoria}>
 
-                    <button id="perro">Perros</button>
-                    <button id="gato">Gatos</button>
-                    <button id="ave">Aves</button>
-                    <button id="todos" className="seleccionado">Todos</button>
+                    <button id="perro" className={categoriaSeleccionada === 'perro' ? 'seleccionado' : ''} >Perros</button>
+                    <button id="gato" className={categoriaSeleccionada === 'gato' ? 'seleccionado' : ''} >Gatos</button>
+                    <button id="ave" className={categoriaSeleccionada === 'ave' ? 'seleccionado' : ''} >Aves</button>
+                    <button id="todos" className={categoriaSeleccionada === 'todos' ? 'seleccionado' : ''}>Todos</button>
 
                 </div>
 
-                <ItemList articulos={elementos} class="petshop__contenedor__productos" id="contenedor-productos" />
+                <div className="petshop__contenedor__productos">
+                    <ItemList articulos={elementos} id="contenedor-productos" />
+                </div>
 
-                <div className="petshop__contenedor__paginacion">
+                <div className="petshop__contenedor__paginacion" onClick={clickPagina}>
 
                     <ul id="paginacion">
-                        <li className="seleccionado" id="page_1">1</li>
-                        <li id="page_2">2</li>
-                        <li id="page_3">3</li>
+                        <li id="1" className={paginaSeleccionada === '1' ? 'seleccionado' : ''}>1</li>
+                        <li id="2" className={paginaSeleccionada === '2' ? 'seleccionado' : ''}>2</li>
+                        <li id="3" className={paginaSeleccionada === '3' ? 'seleccionado' : ''}>3</li>
                     </ul>
 
                 </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import img_cart from './../../img/cart.png';
-import "./ItemCount.css";
 
 const ItemCount = (props) => {
 
