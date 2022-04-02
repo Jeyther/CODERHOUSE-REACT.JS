@@ -7,10 +7,10 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/CartContainer/CartContainer';
 import Footer from './components/Footer/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Page404 from './components/Page404/Page404';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CustomCartContext } from './context/CustomCartContext';
 import { CustomAlertContext } from './context/CustomAlertContext';
-
 
 function App() {
 
@@ -27,6 +27,7 @@ function App() {
             <Route path='/itemList' element={<ItemListContainer />} />
             <Route path='/itemList/:itemID' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/itemList/*' element={<Navigate to = '/'/>} />
           </Routes>
 
           <Footer />

@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../../utils/firebase';
 import Recommended from "./RecommendedItems/Recommended";
+import { AlertContext } from "../../context/AlertContext";
 
 
 const ItemDetailContainer = () => {
+
+    const navigate = useNavigate();
+
+    const { unexist } = useContext(AlertContext);
 
     const { itemID } = useParams();
 
@@ -16,7 +21,7 @@ const ItemDetailContainer = () => {
 
         getItem();
 
-    },[itemID]);
+    }, [itemID]);
 
 
     const getItem = async () => {
@@ -30,8 +35,14 @@ const ItemDetailContainer = () => {
 
         } else {
 
-            console.log("Error al cargar el articulo: el articulo no existe");
+            unexist().then((result) => {
 
+                if (result.isConfirmed) {
+
+                    navigate("/itemList");
+
+                }
+            })
         }
 
     }

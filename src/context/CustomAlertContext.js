@@ -1,7 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import { AlertContext } from "./AlertContext";
-import { Link, Navigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 
 export const CustomAlertContext = ({ children }) => {
@@ -67,32 +67,65 @@ export const CustomAlertContext = ({ children }) => {
 
     const petshopRedirection = () => {
 
-        Swal.fire({
+        return Swal.fire({
 
             title: 'Alerta',
             text: 'Primero debe agregar algun producto al carrito',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Ir al PetShop'
+            focusConfirm: false,
+            confirmButtonText: '<Navigate to="/petshop">Ir al PetShop</Navigate>',
+            cancelButtonText: 'Cancelar',
 
-        }).then((result) => {
-         
-            if (result.isConfirmed) {
-
-                console.log('entro');
-                return (<Link to="/petshop"></Link>);
-
-
-            }
-
-            
         });
+
+    }
+
+    const CartClear = () => {
+
+
+        return Swal.fire({
+            title: '¿Estás Seguro?',
+            text: "No podras revertir esta acción al eliminar los productos del carrito!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FBB158',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar!'
+        });
+
+    }
+
+    const order = (id, envio) => {
+
+        Swal.fire({
+            title:'Compra Realizada!',
+            text: envio > 0 ? 'Sus productos seran enviados pronto a su domicilio' :'Prono le notificaremos cuando podrá acercarse a returar los productos.',
+            html: '<p>Gracias por su compra, su numero de orden es: <b style={{ color: "blue" }}>'+id+'</b></p>',
+            icon: 'success',
+            confirmButtonColor: '#FBB158',
+            confirmButtonText: '¡Gracias!'
+        }
+        )
+
+    }
+
+    const unexist = () => {
+
+        return Swal.fire({
+            title: 'Error 404',
+            text: 'El producto que desea ver no existe',
+            icon: 'error',
+            confirmButtonColor: '#FBB158',
+            confirmButtonText: 'volver'
+        });
+
 
     }
 
     return (
 
-        <AlertContext.Provider value={{ Added, Removed, inputWarning, petshopRedirection }}>
+        <AlertContext.Provider value={{ Added, Removed, inputWarning, petshopRedirection, CartClear, order, unexist }}>
 
             {children}
 

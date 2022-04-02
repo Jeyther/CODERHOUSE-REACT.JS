@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Home.css';
 import Main from './Main';
 import SECCION_2 from './Seccion_2';
 import SECCION_3 from './Seccion_3';

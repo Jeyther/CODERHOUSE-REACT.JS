@@ -3,14 +3,15 @@ import { CartContext } from "../../context/CartContext";
 import Prices from "./Prices";
 import Shipping from "./Shipping";
 import { AlertContext } from "../../context/AlertContext";
+import { useNavigate } from 'react-router-dom';
 
 const BuyerContainer = () => {
 
-    const { inputWarning, petshopRedirection } = useContext(AlertContext);
+    const navigate = useNavigate();
 
-    const { productos, setOrden } = useContext(CartContext);
+    const { inputWarning, petshopRedirection, order } = useContext(AlertContext);
 
-    const [buyerID, setBuyerID] = useState('');
+    const { productos, setOrden, cleanCart } = useContext(CartContext);
 
     const [shipping, setShipping] = useState(0);
 
@@ -20,6 +21,7 @@ const BuyerContainer = () => {
     const sendOrder = (e) => {
 
         e.preventDefault();
+
         if (productos.length > 0) {
 
             if (e.target[0].value.length > 0 && e.target[1].value.length > 0 && e.target[2].value.length > 0 && productos.length > 0) {
@@ -34,9 +36,10 @@ const BuyerContainer = () => {
 
                 let envio = shipping === 0 ? false : true;
 
-                setOrden(buyer, envio, total).then((response) => {
+                setOrden(buyer, envio, total).then((id) => {
 
-                    setBuyerID(response);
+                    order(id,shipping);
+                    cleanCart();
 
                 })
 
@@ -46,15 +49,19 @@ const BuyerContainer = () => {
 
             }
 
-        }else{
+        } else {
 
-            petshopRedirection();
+            petshopRedirection().then((result) => {
+
+                if (result.isConfirmed) {
+
+                    navigate("/itemList");
+
+                }
+
+            });
 
         }
-
-
-
-
 
     }
 
@@ -89,8 +96,6 @@ const BuyerContainer = () => {
 
             <button type="submit" className="carrito__contenedor__valores__boton" >Pagar<img src="./img/flecha_abajo.png"
                 alt="flecha" /></button>
-
-            {buyerID !== '' && <p style={{ color: "black" }}>Su numero de compra es: {buyerID}</p>}
 
         </form>
 

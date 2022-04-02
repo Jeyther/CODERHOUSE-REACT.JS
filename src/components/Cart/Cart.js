@@ -1,12 +1,30 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import EmptyCart from "./EmptyCart";
+import { AlertContext } from "../../context/AlertContext";
 import "./Cart.css";
 import ItemCart from "./ItemCart/ItemCart";
+import Swal from 'sweetalert2';
 
 const Cart = () => {
 
     const { productos, removeProduct, cleanCart } = useContext(CartContext);
+    const { CartClear } = useContext(AlertContext);
+
+    const cartCleaner = () => {
+
+        CartClear().then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    '¡Eliminados!',
+                    'Los productos del carrito han sido eliminados.',
+                    'success'
+                )
+                cleanCart();
+            }
+        });
+    }
+
 
     return (
 
@@ -21,7 +39,7 @@ const Cart = () => {
                     :
                     <>
                         <ItemCart productos={productos} handlerClick={(productoID) => removeProduct(productoID)} />
-                        <button id="vaciar-carrito" onClick={cleanCart}>Vaciar Carrito</button>
+                        <button id="vaciar-carrito" onClick={cartCleaner}>Vaciar Carrito</button>
                     </>
                 }
 
