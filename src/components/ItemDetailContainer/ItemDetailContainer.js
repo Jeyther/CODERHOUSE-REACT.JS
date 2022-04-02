@@ -16,7 +16,8 @@ const ItemDetailContainer = () => {
 
         getItem();
 
-    },[]);
+    },[itemID]);
+
 
     const getItem = async () => {
 
@@ -41,7 +42,7 @@ const ItemDetailContainer = () => {
 
             <ItemDetail producto={item} />
 
-            <Recommended/>
+            <Recommended />
 
         </main>
     )

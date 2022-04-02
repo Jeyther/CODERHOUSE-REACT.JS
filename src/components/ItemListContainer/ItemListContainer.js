@@ -117,13 +117,6 @@ const ItemListContainer = () => {
         }
     }
 
-
-    // const cambiarClasePagina = (pagina) => {
-
-
-
-    // }
-
     return (
 
         <main className="petshop">

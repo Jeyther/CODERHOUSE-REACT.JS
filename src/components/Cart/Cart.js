@@ -6,25 +6,26 @@ import ItemCart from "./ItemCart/ItemCart";
 
 const Cart = () => {
 
-    const { productos, removeProduct } = useContext(CartContext);
+    const { productos, removeProduct, cleanCart } = useContext(CartContext);
 
     return (
 
-        <div id="contenedor-productos">
+        <div className="carrito__contenedor__productos">
 
-            {productos.length === 0 ?
-                <EmptyCart />
-                :
-                (productos.map((i) => {
+            <h2 className="carrito__contenedor__productos__titulo">Carrito</h2>
 
-                    return (
+            <div className="carrito__contenedor__productos__elementos">
 
-                        <ItemCart key={i.id} producto={i} handlerClick={(productoID) => removeProduct(productoID)}/>
+                {productos.length === 0 ?
+                    <EmptyCart />
+                    :
+                    <>
+                        <ItemCart productos={productos} handlerClick={(productoID) => removeProduct(productoID)} />
+                        <button id="vaciar-carrito" onClick={cleanCart}>Vaciar Carrito</button>
+                    </>
+                }
 
-                    )
-
-                }))
-            }
+            </div>
 
         </div >
     )

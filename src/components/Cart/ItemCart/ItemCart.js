@@ -1,30 +1,32 @@
 import React from "react";
-import "./ItemCart.css";
+// import "./ItemCart.css";
 
-const ItemCart = (props) => {
-
-    let producto = props.producto.item;
-    let cantidad = props.producto.quantity;
+const ItemCart = ({ productos, handlerClick }) => {
 
     return (
 
-        <div className="elemento-carrito" id={producto.id} key={props.key}>
+        productos.map(({item,quantity}, index) => {
 
-            <img src={producto.img} alt="comida" className="elemento-carrito__img" />
+            return (
 
-            <div className="elemento-carrito__texto">
-                        <p className="elemento-carrito__texto__titulo" id="nombre">{producto.nombre}</p>
-                        <p className="elemento-carrito__texto__descripcion" id="descripcion">{producto.descripcion}</p>
+                <div className="carrito__contenedor__productos__elementos__elemento" key={index}>
+
+                    <img src={item.img} alt="comida"
+                        className="carrito__contenedor__productos__elementos__elemento__img"/>
+
+                    <div className="carrito__contenedor__productos__elementos__elemento__texto">
+                        <p className="carrito__contenedor__productos__elementos__elemento__texto__titulo">{item.nombre}</p>
+                        <p className="carrito__contenedor__productos__elementos__elemento__texto__descripcion">{item.descripcion}</p>
                     </div>
 
-                    <p className="elemento-carrito__cantidad" id="cantidad">x{cantidad}</p>
+                    <p className="carrito__contenedor__productos__elementos__elemento__cantidad">x{quantity}</p>
 
-                    <div className="elemento-carrito__precio">
-                        <p id="precio-cart">{producto.precio*cantidad}</p>
+                    <div className="carrito__contenedor__productos__elementos__elemento__precio">
+                        <p id="precio">{item.precio}</p>
                         <p>$</p>
                     </div>
 
-                    <button id="eliminar" onClick={() => props.handlerClick(producto.id)}>
+                    <button id="eliminar" onClick={() => handlerClick(item.id)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             className="bi bi-trash3" viewBox="0 0 16 16">
                             <path
@@ -32,7 +34,12 @@ const ItemCart = (props) => {
                         </svg>
                     </button>
 
-        </div>
+                </div>
+
+            )
+
+        }
+        )
     )
 
 }

@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import db from '../../../utils/firebase';
 
-const Recommended = () => {
+const Recommended = (promp) => {
 
     const [elementos, setElementos] = useState([]);
+    const cantElementos = 4;
 
     useEffect(() => {
 
@@ -21,7 +22,7 @@ const Recommended = () => {
 
         datos.sort((a, b) => { return a.id - b.id; });
 
-        setElementos(selectRandomElementsFromArray(datos, 4));
+        setElementos(selectRandomElementsFromArray(datos, cantElementos));
 
     }
 
@@ -60,7 +61,7 @@ const Recommended = () => {
 
                             <div className="producto__recomendados__contenedor__elemento" key={index}>
 
-                                <Link to={"/itemList/"+2}>
+                                <Link to={"/itemList/"+recomendado.id}>
 
                                     <img className="producto__recomendados__contenedor__elemento__img" src={recomendado.img} alt={recomendado.nombre} />
 

@@ -9,14 +9,16 @@ import Cart from './components/CartContainer/CartContainer';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CustomCartContext } from './context/CustomCartContext';
+import { CustomAlertContext } from './context/CustomAlertContext';
 
 
 function App() {
 
   return (
 
-    <CustomCartContext>
-      <BrowserRouter>
+    <CustomAlertContext>
+      <CustomCartContext>
+        <BrowserRouter>
 
           <NavBar />
 
@@ -29,8 +31,9 @@ function App() {
 
           <Footer />
 
-      </BrowserRouter>
-    </CustomCartContext>
+        </BrowserRouter>
+      </CustomCartContext>
+    </CustomAlertContext>
   );
 }
 

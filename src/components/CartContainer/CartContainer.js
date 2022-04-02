@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Cart from "../Cart/Cart";
-import Buyer from "../BuyerContainer/BuyerContainer"
+import Values from "../ValuesContainer/ValuesContainer"
 
 
 const CartContainer = () => {
 
     return (
 
-        <div>
+        <main className="carrito">
 
-            <Cart/>
-            <Buyer/>
+            <div className="carrito__contenedor">
 
-        </div>
+                <Cart />
+                <Values />
+
+            </div>
+
+        </main>
     )
 
 }

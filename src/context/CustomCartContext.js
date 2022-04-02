@@ -1,9 +1,12 @@
 import { addDoc, collection, doc, Timestamp, updateDoc } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
+import { AlertContext } from "./AlertContext";
 import { db } from '../utils/firebase';
 
 export const CustomCartContext = ({ children }) => {
+
+    const {Added, Removed} = useContext(AlertContext);
 
     const [productos, setProductos] = useState([]);
     const [cartCount, setCartCount] = useState(0);
@@ -23,6 +26,8 @@ export const CustomCartContext = ({ children }) => {
 
         setCartCount((prev) => prev + quantity);
 
+        Added();
+
     }
 
     const removeProduct = (productID) => {
@@ -31,9 +36,13 @@ export const CustomCartContext = ({ children }) => {
         
         setProductos(elementos);
 
+        setCartCount(cartCounter(elementos));
+
+        Removed();
+
     }
 
-    const clean = () => {
+    const cleanCart = () => {
 
         setCartCount(0);
         setProductos([]);
@@ -67,11 +76,12 @@ export const CustomCartContext = ({ children }) => {
 
     }
 
-    const setOrden = async (buyer, total) => {
+    const setOrden = async (buyer, envio, total) => {
 
         let orden = {
 
             buyer,
+            envio,
             productos,
             date: Timestamp.fromDate(new Date()),
             total
@@ -85,7 +95,6 @@ export const CustomCartContext = ({ children }) => {
             const docRef = await addDoc(ordenes, orden);
 
             let buyerID = docRef.id;
-
 
             return buyerID;
 
@@ -113,9 +122,23 @@ export const CustomCartContext = ({ children }) => {
 
     }
 
+    const cartCounter = (elementos) => {
+
+        let counter = 0;
+
+        for (const elemento of elementos) {
+
+            counter += elemento.quantity;
+
+        }
+
+        return counter;
+
+    }
+
     return (
 
-        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, clean, setOrden, updateOrden }}>
+        <CartContext.Provider value={{ productos, cartCount, addProduct, removeProduct, cleanCart, setOrden, updateOrden }}>
 
             {children}
 
