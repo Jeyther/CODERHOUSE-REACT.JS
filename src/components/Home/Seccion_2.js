@@ -5,7 +5,7 @@ const seccion_2 = () => {
 
     return (
 
-        <section className="seccion-2" id="S2">
+        <section className="seccion-2" name="seccion-2">
 
             <h2 className="seccion-2__titulo">Servicios</h2>
 

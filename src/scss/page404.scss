@@ -1,0 +1,100 @@
+.page404{
+
+    &__container{
+
+        margin: 50px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1280px;
+
+        &__img{
+
+            max-width: 1280px;
+
+        }
+        &__btn {
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            gap: 10px;
+    
+            padding: 5px 15px;
+    
+            background: #FBB158;
+            border-radius: 47px;
+            border: none;
+            color: white;
+    
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+    
+            &:link {
+    
+                text-decoration: none;
+                border-radius: 100px;
+                transition: all .2s;
+    
+                &:visited {
+    
+                    position: absolute;
+    
+                }
+    
+            }
+    
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                border-width: 3px;
+                border-style: solid;
+                border-color: white;
+    
+                &::after {
+                    transform: scaleX(1.4) scaleY(1.6);
+                    opacity: 0;
+                }
+    
+            }
+    
+            &:active {
+                transform: translateY(-1px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            &::after {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+                border-radius: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: all .4s;
+            }
+    
+            &__texto {
+                color: var(--blanco);
+                font-family: var(--popins);
+                font-weight: 600;
+                font-size: 18px;
+    
+                // word-spacing: -8px;
+                // letter-spacing: -1px;
+            }
+    
+            &__flecha {
+    
+                transform: rotate(-90deg);
+    
+            }
+    
+        }
+
+    }
+
+}

@@ -8,7 +8,7 @@ const Main = () => {
 
     return (
 
-        <main className="main">
+        <main className="main" name="main" >
 
             <div className="main__texto">
                 <h1 className="main__texto__titulo"><span className="pequeño">Lo Mejor</span><span className="separacionPalabras">para

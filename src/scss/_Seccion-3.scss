@@ -92,9 +92,9 @@
 
             display: flex;
             flex-direction: column;
-            gap: 5px;
             align-items: center;
-
+            justify-content: space-between;
+            
             padding: 10px 15px;
             background-color: white;
             border-radius: 10px;
@@ -102,6 +102,8 @@
             transition: box-shadow .2s linear;
 
             width: 100%;
+            min-height: 320px;
+            max-height: 320px;
 
             &:hover {
 
@@ -136,13 +138,14 @@
 
             &__titulo {
 
-                font-size: 14px;
+                font-size: 12px;
+                font-weight: 600;
 
             }
 
             &__descripcion {
 
-                font-size: 12px;
+                font-size: 11px;
                 line-height: 15px;
 
             }

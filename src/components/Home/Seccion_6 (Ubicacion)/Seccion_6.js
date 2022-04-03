@@ -1,4 +1,5 @@
 import React from 'react';
+import Mapa from './Mapa';
 
 const Seccion_6 = () => {
     return (
@@ -38,7 +39,7 @@ const Seccion_6 = () => {
 
                 <div className="seccion-6__container__ubicacion">
 
-                    <div className="seccion-6__container__ubicacion__mapa" id="mapa"></div>
+                    <Mapa/>
 
                     <p className="seccion-6__container__ubicacion__horario">Atención: Lunes a Sábado de 9:00am a 7:00pm</p>
                     <h3 className="seccion-6__container__ubicacion__direccion">Avenida Paseo de la República 2400, Agrupación
