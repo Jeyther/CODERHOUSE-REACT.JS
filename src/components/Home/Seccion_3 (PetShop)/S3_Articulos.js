@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const S3_Articulos = ({ articulos }) => {
 
-    console.log('ARTICULOS,', articulos);
 
     return (
 
@@ -12,15 +12,13 @@ const S3_Articulos = ({ articulos }) => {
 
                 <div className="seccion-3__grid__elemento" key={index}>
 
-                    <a href='producto.html'>
 
-                        <img className="seccion-3__grid__elemento__img" id="imagen" src={articulo.img} alt="comida_perro" />
 
-                        <h4 className="seccion-3__grid__elemento__titulo" id="nombre">{articulo.nombre}</h4>
+                    <img className="seccion-3__grid__elemento__img" id="imagen" src={articulo.img} alt="comida_perro" />
 
-                        <p className="seccion-3__grid__elemento__descripcion" id="descripcion">{articulo.descripcion}</p>
+                    <h4 className="seccion-3__grid__elemento__titulo" id="nombre">{articulo.nombre}</h4>
 
-                    </a>
+                    <p className="seccion-3__grid__elemento__descripcion" id="descripcion">{articulo.descripcion}</p>
 
                     <div>
                         <div>
@@ -28,9 +26,10 @@ const S3_Articulos = ({ articulos }) => {
                             <p>$</p>
                         </div>
                     </div>
+                    <Link to={"/itemList/" + articulo.id}>
+                        <button className="seccion-3__grid__elemento__boton" id="agregar">Detalles<img src="img/S3/cart.png" alt={articulo.nombre} className="seccion-3__grid__elemento__boton__cart" /> </button>
 
-                    <button className="seccion-3__grid__elemento__boton" id="agregar">Agregar <img src="img/S3/cart.png" className="seccion-3__grid__elemento__boton__cart" /> </button>
-
+                    </Link>
                 </div>
             )
         })
