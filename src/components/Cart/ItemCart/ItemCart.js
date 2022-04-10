@@ -1,5 +1,4 @@
 import React from "react";
-// import "./ItemCart.css";
 
 const ItemCart = ({ productos, handlerClick }) => {
 

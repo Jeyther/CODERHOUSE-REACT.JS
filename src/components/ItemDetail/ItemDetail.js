@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-
 import ItemCount from "../ItemCount/ItemCount";
 import ItemDetailBtns from "../ItemDetailBtns/ItemDetailBtns";
 import { CartContext } from "../../context/CartContext";

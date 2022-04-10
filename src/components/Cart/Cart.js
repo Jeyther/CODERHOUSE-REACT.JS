@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import EmptyCart from "./EmptyCart";
 import { AlertContext } from "../../context/AlertContext";
-import "./Cart.css";
 import ItemCart from "./ItemCart/ItemCart";
 import Swal from 'sweetalert2';
 

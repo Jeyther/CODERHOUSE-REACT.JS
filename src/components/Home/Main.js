@@ -1,5 +1,4 @@
 import React from 'react';
-// import './../../../scss/Main.scss';
 import { Link } from "react-router-dom";
 import fondo from './../../img/fondo.png';
 import flecha from './../../img/flecha.png';

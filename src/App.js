@@ -1,5 +1,3 @@
-
-// import './App.css';
 import './scss/origen.scss';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
@@ -8,7 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/CartContainer/CartContainer';
 import Footer from './components/Footer/Footer';
 import Page404 from './components/Page404/Page404';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { CustomCartContext } from './context/CustomCartContext';
 import { CustomAlertContext } from './context/CustomAlertContext';
 

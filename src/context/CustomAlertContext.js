@@ -1,12 +1,8 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import { AlertContext } from "./AlertContext";
-// import { useNavigate } from 'react-router-dom';
-
 
 export const CustomAlertContext = ({ children }) => {
-
-    // const navigate = useNavigate();
 
     const Added = () => {
 
@@ -135,21 +131,3 @@ export const CustomAlertContext = ({ children }) => {
 
 
 }
-/* 
-    const Toast = Swal.mixin({
-
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true
-
-    })
-
-    Toast.fire({
-
-        icon: 'success',
-        title: 'producto agregado correctamente'
-
-    })
- */

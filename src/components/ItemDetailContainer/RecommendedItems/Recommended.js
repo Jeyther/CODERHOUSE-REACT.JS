@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import db from '../../../utils/firebase';
 
-const Recommended = (promp) => {
+const Recommended = () => {
 
     const [elementos, setElementos] = useState([]);
     const cantElementos = 4;
