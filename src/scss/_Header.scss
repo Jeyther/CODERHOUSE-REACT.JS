@@ -11,6 +11,8 @@
 
     background-color: var(--azul);
     border-radius: 0 0 15px 15px;
+
+
 }
 
 .firefox .navbar {
@@ -18,13 +20,13 @@
     background-color: var(--bg);
 }
 
-.nav-link{
+.nav-link {
 
     position: relative;
 
 }
 
-#cartWidget-Counter{
+#cartWidget-Counter {
 
     position: absolute;
 
@@ -41,5 +43,12 @@
     border-radius: 50%;
     width: 20px;
     height: 20px;
+
+}
+
+/* resaltar pagina seleccionada */
+.active {
+
+    color: white !important;
 
 }

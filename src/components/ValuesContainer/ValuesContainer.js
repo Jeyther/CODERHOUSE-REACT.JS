@@ -85,8 +85,8 @@ const BuyerContainer = () => {
 
             <div className="carrito__contenedor__valores__buyer">
                 <h4>Datos:</h4>
-                <input type="text" placeholder="Nombre y Apellido" className="carrito__contenedor__valores__buyer__nombre"></input>
-                <input type="text" placeholder="Email" className="carrito__contenedor__valores__buyer__correo"></input>
+                <input type="text" placeholder="Nombre y Apellido" className="carrito__contenedor__valores__buyer__nombre" pattern="[A-Za-z]{1-15}"></input>
+                <input type="email" placeholder="Email" className="carrito__contenedor__valores__buyer__correo"></input>
                 <input type="text" placeholder="Dirección" className="carrito__contenedor__valores__buyer__direccion"></input>
             </div>
 
