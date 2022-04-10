@@ -1,4 +1,30 @@
-# Getting Started with Create React App
+# Veterinaria PetCity (React APP)
+
+### Proyecto Final para [`CoderHouse`](https://www.coderhouse.com.pe/)
+###### Curso: React JS 01/22 - 03/22
+
+Proyecto creado en React con Create React App
+
+**Tecnologias Utilizadas:** 
+* HTML
+* CSS
+* SASS
+* Bootstrap
+* Javascript
+* React
+* Firebase
+
+## Preview
+
+**un vistazo de la página principal del proyecto**
+
+<p align="center" max-width="300px"><img src="https://github.com/Jeyther/CODERHOUSE-REACT.JS/blob/main/src/img/thumbnail.png"></p>
+
+## Correr el Proyecto
+Instalar React, npm y las respectivas dependencias para luego clonar el proyecto y correrlo en tu maquina local.
+
+<br><br><br><br><hr><br><br><br><br>
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
