@@ -12,7 +12,7 @@ Proyecto creado en React con Create React App
 * Bootstrap
 * Javascript
 * React
-* Firebase
+* Firebase (Firestore)
 
 ## Preview
 
